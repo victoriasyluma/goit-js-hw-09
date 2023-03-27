@@ -11,6 +11,10 @@ form.addEventListener('submit', async (event) => {
   const stepsDelayMs = Number(step.value);
   const amountOfSteps = Number(amount.value);
 
+  if (amountOfSteps === 0) {
+    return;
+  }
+
   let totalDelay = firstDelayMs;
 
   const executePromise = ({ position, delay }) => {
